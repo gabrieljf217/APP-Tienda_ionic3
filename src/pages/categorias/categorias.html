@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Categorías</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list no-lines>
+    <button ion-item *ngFor="let categoria of _ps.categorias"
+            (click)="categoriaId( categoria )">
+      <ion-icon [name]="categoria.icono" item-left></ion-icon>
+      {{ categoria.linea }}
+    </button> 
+  </ion-list>
+</ion-content>
