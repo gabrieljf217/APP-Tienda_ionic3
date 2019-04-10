@@ -7,11 +7,13 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class OrdenesDetallePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  orden:any = {};
+
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams) {
+    this.orden = this.navParams.get("orden");
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad OrdenesDetallePage');
-  }
+  
 
 }
