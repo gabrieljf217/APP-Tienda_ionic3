@@ -4,7 +4,7 @@
       Tienda
     </ion-title>
     <ion-buttons right>
-      <button ion-button icon-only >
+      <button ion-button icon-only (click)="_cs.verCarrito()">
           <ion-icon name="cart"></ion-icon>
           <ion-badge class="carrito-numero" color="danger"
                       *ngIf="_cs.items.length>0">

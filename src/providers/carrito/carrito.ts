@@ -1,8 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AlertController, ToastController, Platform } from 'ionic-angular';
+import { AlertController, ToastController, Platform, ModalController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
+//service
+import { UsuarioProvider } from '../usuario/usuario';
+
+//paginas del modal
+import { LoginPage, CarritoPage } from "../../pages/index.paginas";
 
 
 @Injectable()
@@ -11,13 +16,35 @@ export class CarritoProvider {
   items:any[] = [];
 
   constructor(public http: HttpClient,
-              private alertCtrl:AlertController,
               public toastCtrl: ToastController,
+              private alertCtrl:AlertController,
+              private modalCtrl:ModalController,
               private platform:Platform,
-              private storage: Storage) {
+              private storage: Storage,
+              private _us:UsuarioProvider,
+              ) {
     
     this.cargarStorage();
   }
+
+  verCarrito(){
+
+    let modal:any;
+      if ( this._us.token ) {
+        //mostrar pagina del carrito
+        modal = this.modalCtrl.create( CarritoPage ); 
+      } else {
+        //mostrar modal
+        modal = this.modalCtrl.create( LoginPage ); 
+      }
+      modal.present();
+
+      modal.onDidDismiss( (abrirCarrito:boolean)=>{
+        if ( abrirCarrito ) {
+          this.modalCtrl.create ( CarritoPage );
+        }
+      });
+}
 
   agregarCarrito( itemParametro:any ){
     for (let item of this.items ) {
