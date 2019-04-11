@@ -12,11 +12,26 @@ export class ProductosProvider {
   productos:any[] = [];
   categorias:any[] = [];
   porCategorias:any[] = [];
+  busqueda:any[] = []; 
 
   constructor(public http: HttpClient) {
   
     this.cargarTodos();
     this.cargarLineas();
+  }
+
+  buscarProducto( producto:string ){
+    let url = URL_SERVICIOS + "/productos/buscar/"+ producto;
+    this.http.get( url )
+      .subscribe( resp=>{
+        let data = resp;
+        if ( data['error'] ) {
+          //aqui hay un problema
+        }else{
+          this.busqueda = data['productos']; 
+          console.log(data['productos']);
+        }
+      });
   }
 
   cargarLineas(){
@@ -27,8 +42,7 @@ export class ProductosProvider {
         if ( data['error'] ) {
           //aqui hay un problema
         }else{
-          this.categorias = data['lineas'];
-          console.log(data['lineas']);        
+          this.categorias = data['lineas'];   
         }
       });
   }

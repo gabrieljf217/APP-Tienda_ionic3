@@ -16,7 +16,8 @@ import { CategoriasPage,
         OrdenesDetallePage,
         PorCategoriasPage,
         ProductoPage,
-        TabsPage } from "../pages/index.paginas";
+        TabsPage,
+        BuscarPage } from "../pages/index.paginas";
 
 //providers
 
@@ -44,6 +45,7 @@ import { IonicStorageModule } from '@ionic/storage';
     PorCategoriasPage,
     ProductoPage,
     TabsPage,
+    BuscarPage,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ import { IonicStorageModule } from '@ionic/storage';
     OrdenesDetallePage,
     PorCategoriasPage,
     ProductoPage,
-    TabsPage
+    TabsPage,
+    BuscarPage
   ],
   providers: [
     StatusBar,

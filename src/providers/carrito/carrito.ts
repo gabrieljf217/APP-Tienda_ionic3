@@ -171,4 +171,11 @@ export class CarritoProvider {
     
   }
 
+  borrarOrden( ordenId:String ){
+    let url = URL_SERVICIOS + "/pedidos/borrarPedido/"+ this._us.token + "/" + this._us.id_usuario + "/" + ordenId;
+
+    return this.http.delete( url )
+      .pipe(map( resp => resp ));
+  }
+
 }
