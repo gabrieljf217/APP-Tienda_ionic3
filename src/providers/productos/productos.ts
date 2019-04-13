@@ -62,9 +62,7 @@ export class ProductosProvider {
   }
 
   cargarTodos(  ){
-
     let promesa = new Promise( ( resolve, reject )=>{
-
       let url = URL_SERVICIOS + "/productos/todos/" + this.pagina;
       this.http.get( url )
         .pipe(map( resp => resp ))

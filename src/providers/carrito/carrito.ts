@@ -39,14 +39,16 @@ export class CarritoProvider {
   }
 
   realizarPedido(){
-    let data = new FormData();
     let codigos:string[]=[];
-
+    
     for (let item of this.items ) {
       codigos.push( item.codigo );
-      
     }
-    data.append("items",codigos.join(","));
+    console.log(codigos);
+    
+    let data = {
+      "items":codigos
+    }
     
     let url = URL_SERVICIOS + "/pedidos/realizarOrden/"+ this._us.token + "/" + this._us.id_usuario;
 
@@ -70,6 +72,8 @@ export class CarritoProvider {
           }).present();
         }
       });
+      this.items = [];
+      this.guardarStorage()
   }
 
   verCarrito(){
@@ -108,7 +112,8 @@ export class CarritoProvider {
     this.guardarStorage();
     const toast = this.toastCtrl.create({
       message: itemParametro.producto+' añadido al carrito',
-      duration: 3000
+      duration: 3000,
+      position: 'middle'
     });
     toast.present();
   }
@@ -173,8 +178,12 @@ export class CarritoProvider {
 
   borrarOrden( ordenId:String ){
     let url = URL_SERVICIOS + "/pedidos/borrarPedido/"+ this._us.token + "/" + this._us.id_usuario + "/" + ordenId;
+    
+    console.log("borrar", this.http.get( url )
+    .pipe(map( resp => resp ))
+    );
 
-    return this.http.delete( url )
+    return this.http.get( url )
       .pipe(map( resp => resp ));
   }
 

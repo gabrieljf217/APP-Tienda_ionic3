@@ -6,6 +6,6 @@ import { URL_IMAGEN } from '../../config/url.servicios';
 })
 export class ImagenPipe implements PipeTransform {
   transform( codigo:string ){
-		return URL_IMAGEN + codigo +".jpg";
+		return URL_IMAGEN + codigo;
 	}
 }

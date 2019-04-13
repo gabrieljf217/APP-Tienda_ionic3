@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { CarritoProvider } from '../../providers/carrito/carrito';
 
 @Component({
@@ -12,7 +12,8 @@ export class OrdenesDetallePage {
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
-              public _cs:CarritoProvider) {
+              public _cs:CarritoProvider,
+              public toastCtrl:ToastController) {
     this.orden = this.navParams.get("orden");
   }
 
@@ -22,9 +23,15 @@ export class OrdenesDetallePage {
         if (data['error']) {
           //manejo de errores
         } else {
+          const toast = this.toastCtrl.create({
+            message: 'Orden '+ ordenId +' eliminada',
+            duration: 3000,
+            position: 'middle'
+          });
+          toast.present();
           this.navCtrl.pop();
         }
-      })
+      });
   }
 
 }

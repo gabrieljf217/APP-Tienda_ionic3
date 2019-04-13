@@ -29,9 +29,12 @@ export class UsuarioProvider {
   }
 
   ingresar(correo:string, contrasena:string ){
-    let data = new FormData();
-    data.append("correo",correo);
-    data.append("contrasena",contrasena);
+    let data ={
+      "correo":correo,
+      "contrasena":contrasena
+    }
+    console.log("DATA ", data);
+    
 
     let url = URL_SERVICIOS + "/login";
 

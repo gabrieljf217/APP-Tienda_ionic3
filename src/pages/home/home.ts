@@ -18,6 +18,7 @@ export class HomePage {
   }
 
   siguientePagina( infiniteScroll){
+    
     this._ps.cargarTodos()
       .then( ()=>{
         infiniteScroll.complete();
