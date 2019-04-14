@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="blues">
     <ion-title>Ordenes</ion-title>
   </ion-navbar>
 
@@ -9,13 +9,16 @@
 
 <ion-content padding>
 
-  <ion-list>
-    <button ion-item
-            *ngFor="let orden of _cs.ordenes"
-            (click)="detalle(orden)">
-      <strong>Orden Id:</strong>
-      {{ orden.id }}
-    </button>
-  </ion-list>
+  <ion-card *ngFor="let orden of _cs.ordenes"
+          (click)="detalle(orden)" color="blues">
+
+    <ion-card-header>
+      <strong>Orden Id: {{ orden.id }}</strong>
+    </ion-card-header>
+    <ion-card-content>
+      <h5 *ngFor="let item of orden.detalle">{{ item.producto }}.</h5>
+    </ion-card-content>
+  
+  </ion-card>
 
 </ion-content>

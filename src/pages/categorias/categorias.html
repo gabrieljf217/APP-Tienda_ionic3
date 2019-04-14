@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="blues">
     <ion-title>Categorías</ion-title>
   </ion-navbar>
 
@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-list no-lines>
     <button ion-item *ngFor="let categoria of _ps.categorias"
-            (click)="categoriaId( categoria )">
+            (click)="categoriaId( categoria )" color="greys">
       <ion-icon [name]="categoria.icono" item-left></ion-icon>
       {{ categoria.linea }}
     </button> 

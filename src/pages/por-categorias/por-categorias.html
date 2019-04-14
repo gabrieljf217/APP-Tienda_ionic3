@@ -1,21 +1,22 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="blues">
     <ion-title>Categoría {{ categoriaId.linea }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of _ps.porCategorias" >
+    <ion-item *ngFor="let item of _ps.porCategorias" color="greys">
       <ion-thumbnail item-start>
         <img [src]="item.codigo | imagen "/>
       </ion-thumbnail>
       <h2>{{ item.producto }}</h2>
       <p>{{ item.precio_compra | currency: 'USD':true }}</p>
-      <button ion-button clear item-end (click)="detalle( item )">Ver</button>
+      <button ion-button clear item-end (click)="detalle( item )" color="blues">
+        <ion-icon class="arrow" name="ios-arrow-dropright-circle"></ion-icon>
+      </button>
     </ion-item>
   </ion-list>
 </ion-content>

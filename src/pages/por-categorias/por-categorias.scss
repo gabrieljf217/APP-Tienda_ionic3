@@ -1,3 +1,8 @@
 page-por-categorias {
-
+    ion-content{
+        background-color: color($colors, greys) !important;
+    }
+    .arrow{
+        font-size: 30px;
+    }
 }

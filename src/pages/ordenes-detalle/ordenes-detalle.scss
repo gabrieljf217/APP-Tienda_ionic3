@@ -1,3 +1,17 @@
 page-ordenes-detalle {
-
+    ion-content{
+        background-color: color($colors, greys) !important;
+    }
+    .colorback{ 
+        color: color($colors, lightt) !important; 
+        background-color: color($colors, blues) !important;
+        border-radius: 3px;
+        padding: 0px;
+    }
+    .img{
+        border-radius: 3px 3px 3px 3px;
+        position: relative;
+        top: 1px;
+        left: 1px;
+    }
 }

@@ -1,6 +1,6 @@
 
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="blues">
     <ion-buttons left>
       <button ion-button icon-only (click)="viewCtrl.dismiss(false)">
           <ion-icon name="arrow-back"></ion-icon>
@@ -15,18 +15,19 @@
 <ion-content padding>
   <ion-list>
 
-    <ion-item>
+    <ion-item color="greys">
       <ion-label floating>Correo</ion-label>
       <ion-input type="email" [(ngModel)]="correo"></ion-input>
     </ion-item>
   
-    <ion-item>
+    <ion-item color="greys">
       <ion-label floating>Contraseña</ion-label>
       <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
     </ion-item>
   
   </ion-list>
-  <button ion-button 
+  <button round
+          ion-button 
           [disabled]=" correo.length<5 || contrasena.length<5" 
           (click)="ingresar()"
           block>

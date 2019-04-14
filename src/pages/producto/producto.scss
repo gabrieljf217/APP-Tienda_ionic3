@@ -1,3 +1,13 @@
 page-producto {
-
+    ion-content{
+        background-color: color($colors, greys) !important;
+    }
+    .colorback{ 
+        color: color($colors, lightt) !important; 
+        background-color: color($colors, blues) !important;
+        border-radius: 3px;
+    }
+    img{
+        border-radius: 3px 3px 0px 0px;
+    }
 }

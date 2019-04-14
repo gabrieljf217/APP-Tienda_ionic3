@@ -26,10 +26,12 @@ $app-direction: ltr;
   position: relative;
   top: 30%;
   font-size: 20px;
+  color: #FCF7F8;
 }
 
 .icon-5x{
   font-size: 100px;
+  color: #4B6CB3;
 }
 
 .carrito-numero{
@@ -47,15 +49,12 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  dark:       #0A1128,
-  primary:    #001F54,
-  blue:       #034078,
-  light:      #FEFCFB,
-  grey: (
-    base:     #21282A,
-    contrast: #FEFCFB
-  ),
-  danger:     #FE0000,
+  dark:       #020300,
+  primary:    #4B6CB3,
+  lightt:     #F6F8FC,
+  blues:      #4B6CB3,
+  greys:      #1F2430,
+  danger:     #E8364A,
 );
 
 

@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar color="blues">
     <ion-buttons left>
-      <button ion-button  *ngIf="_us.activo()" (click)="_us.cerrarSesion()">
-          Salir
+      <button ion-button icon-only *ngIf="_us.activo()" (click)="_us.cerrarSesion()">
+          <ion-icon name="md-log-out"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title>
@@ -21,10 +21,10 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let item of _ps.productos" (click)="detalle( item )">
+  <ion-card color="blues" *ngFor="let item of _ps.productos" (click)="detalle( item )">
     <img [src]="item.codigo | imagen "/>
     <ion-card-content>
-      <ion-card-title >
+      <ion-card-title>
         {{ item.producto }}
       </ion-card-title>
       <p>

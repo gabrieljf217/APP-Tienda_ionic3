@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="blues">
     <ion-title></ion-title>
   </ion-navbar>
 
@@ -8,25 +8,27 @@
 
 <ion-content padding>
 
-  <img [src]="item.codigo | imagen" alt="">
-  <div padding>
-    <h5>{{ item.producto }}</h5>
-    <p>
-      <strong>Precio: </strong>{{ item.precio_compra | currency: 'USD':true }}
-    </p>
-    <p>
-      {{ item.descripcion }}
-      <br>
-      <br>
-      <strong>{{ item.proveedor }}</strong>
-    </p>
-    <button ion-button block icon-left (click)="_cs.agregarCarrito( item )">
-      <ion-icon name="cart"></ion-icon>
-      Agregar al carrito
-    </button>
-
+  <div class="colorback">
+    <img [src]="item.codigo | imagen">
+    <div padding>
+      <h5>{{ item.producto }}</h5>
+      <p>
+        <strong>Precio: </strong>{{ item.precio_compra | currency: 'USD':true }}
+      </p>
+      <p>
+        {{ item.descripcion }}
+        <br>
+        <br>
+        <strong>Proveedor: </strong>{{ item.proveedor }}
+      </p>
+    </div>
   </div>
-
+  <br>
+  <button round ion-button block icon-left (click)="_cs.agregarCarrito( item )">
+    <ion-icon name="cart"></ion-icon>
+    Agregar al carrito
+  </button>
+  
 
 
 </ion-content>
