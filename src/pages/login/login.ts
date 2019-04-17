@@ -20,16 +20,13 @@ export class LoginPage {
   }
 
   ingresar(){
+    let loading = this.loadingCtrl.create({
+      content: 'Verificando'
+    });
+    loading.present();
     if( this._us.ingresar( this.correo, this.contrasena )){
+      loading.dismiss();
       this.viewCtrl.dismiss(true);
     } 
-    //})
-    //TODO: crear loading
-    // const loader = this.loadingCtrl.create({
-    //   content: "Por favor espere...",
-    //   duration: 2000
-    // });
-    // loader.present();
-  }//TODO: revisar video todo para eliminar todos inecesarios
-
+  }
 }
